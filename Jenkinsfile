@@ -11,7 +11,7 @@ pipeline {
 						sh './jenkins/scripts/kill.sh'
 					}
 				}
-
+			}
 					post {
 						always {
 							junit 'target/surefire-reports/*.xml'
