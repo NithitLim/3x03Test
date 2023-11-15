@@ -11,19 +11,7 @@ pipeline {
 						sh './jenkins/scripts/kill.sh'
 					}
 				}
-				stage('Headless Browser Test') {
-					agent {
 
-					}
-					steps {
-				
-					}
-					post {
-						always {
-							junit 'target/surefire-reports/*.xml'
-						}
-					}
-				}
 			}
 		}
 	}
