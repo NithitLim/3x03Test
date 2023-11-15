@@ -1,5 +1,5 @@
 pipeline {
-	agent none
+	agent any
 	stages {
 		stage('Integration UI Test') {
 			parallel {
@@ -11,7 +11,13 @@ pipeline {
 						sh './jenkins/scripts/kill.sh'
 					}
 				}
-			}
+				stage('Headless Browser Test') {
+					agent {
+
+					}
+					steps {
+				
+					}
 					post {
 						always {
 							junit 'target/surefire-reports/*.xml'
